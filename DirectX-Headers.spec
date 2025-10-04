@@ -91,12 +91,3 @@ done
 %{_libdir}/libDirectX-Guids.a
 %{_libdir}/libd3dx12-format-properties.a
 %{_libdir}/pkgconfig/DirectX-Headers.pc
-%changelog
-* Thu Nov 28 2024 Nicolas Chauvet <kwizart@gmail.com> - 1.614.1-1
-- Update to 1.614.1
-
-* Fri Apr 12 2024 Nicolas Chauvet <kwizart@gmail.com> - 1.613.1-1
-- Update to 1.613.1
-
-* Mon Feb 26 2024 Nicolas Chauvet <kwizart@gmail.com> - 1.611.0-1
-- Initial spec file
