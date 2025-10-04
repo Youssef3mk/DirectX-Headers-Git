@@ -31,7 +31,6 @@ BuildRequires:  gcc-c++
 # Case in-sensitive provides
 Provides: directx-headers = %{version}-%{release}
 
-
 %description
 Official Direct3D 12 headers
 
@@ -45,7 +44,6 @@ Provides:       %{name}-static = %{version}-%{release}
 The %{name}-devel package contains libraries and header files for
 developing applications that use %{name}.
 
-
 %prep
 %autosetup -n %{name}-%{commit}
 for i in LICENSE README.md ; do
@@ -53,28 +51,25 @@ for i in LICENSE README.md ; do
   touch -r SECURITY.md ${i}
 done
 
-
 %build
 %meson \
  %{?!_with_test:-Dbuild-test=false}
 
 %meson_build
 
-
 %install
 %meson_install
-
 
 %check
 %{?_with_test:
 %meson_test
 }
 
-
 %files
 %license LICENSE
 %doc README.md SECURITY.md
-%{_includedir}/DirectXY
+# تم استبدال DirectXY الذي لم يعد موجودًا بدليل directx الفعلي
+%{_includedir}/directx
 %{_includedir}/dxguids
 %{_includedir}/wsl
 %{_libdir}/pkgconfig/DirectX-Headers.pc
@@ -85,9 +80,11 @@ done
 %license LICENSE
 %doc README.md SECURITY.md
 %{_includedir}/directx
-%{_includedir}/composition    # ⬅️ التعديل هنا
+# إضافة دليل composition الذي كان يسبب خطأ "unpackaged files"
+%{_includedir}/composition
 %{_includedir}/dxguids
 %{_includedir}/wsl
 %{_libdir}/libDirectX-Guids.a
 %{_libdir}/libd3dx12-format-properties.a
 %{_libdir}/pkgconfig/DirectX-Headers.pc
+
