@@ -13,7 +13,7 @@ Version:        1.618.2
 Release:        1%{?dist}
 Summary:        Official Direct3D 12 headers
 
-%global commit 6344f526506221dcde58827e49e2ab449703ac5f
+%global commit e45c5c2193301bcdce176beb06d82a449e1081d4
 %global shortcommit %(c=%{commit}; echo ${c:0:7})
 
 License:        MIT
